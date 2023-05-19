@@ -1,0 +1,17 @@
+.search-bar{
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 5rem;
+    border: none;
+    margin-top: 1rem;
+    padding-left: 2.5rem;
+    font-size: 0.8rem;
+}
+.search .bi{
+    position: absolute;
+    margin-top: 1.75rem ;
+    margin-left: 0.75rem;
+}
+.search-bar:focus{
+    outline: none !important;
+}
