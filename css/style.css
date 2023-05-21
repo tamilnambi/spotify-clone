@@ -25,7 +25,7 @@ background: linear-gradient(90deg, rgba(157,58,180,1) 0%, rgba(69,99,252,1) 100%
 }
 @font-face {
     font-family: title;
-    src: url(Gotham-Spotify-Font/Gotham-Bold.otf);
+    src: url(../Gotham-Spotify-Font/Gotham-Bold.otf);
 }
 .logo{
     font-family: title;
