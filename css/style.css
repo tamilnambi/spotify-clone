@@ -15,6 +15,9 @@ background: linear-gradient(90deg, rgba(157,58,180,1) 0%, rgba(69,99,252,1) 100%
     width: 11vw;
     height: 8vh;
 }
+.btn-signup:hover{
+    transform: scale(1.1);
+}
 .side-bar{
     width: 30vw;
     height: 50vw;
@@ -71,11 +74,11 @@ background: linear-gradient(90deg, rgba(157,58,180,1) 0%, rgba(69,99,252,1) 100%
 }
 .signup:hover{
     color: white;
-    transform: translate(1.5);
+    transform: scale(1.1);
 }
 .login:hover{
     background-color: white !important;
-    transform: translate(1.2);
+    transform: scale(1.1);
 }
 .login{
     border-radius: 1.5rem;
