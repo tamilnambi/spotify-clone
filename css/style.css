@@ -23,7 +23,7 @@ background: linear-gradient(90deg, rgba(157,58,180,1) 0%, rgba(69,99,252,1) 100%
 }
 .side-bar{
     width: 30vw;
-    height: 50vw;
+    height: 50vh;
 }
 .rights-icon{
     margin-top: -0.3rem;
