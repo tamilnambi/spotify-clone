@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify - Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="shortcut icon" href="src/logo.webp" type="image/x-icon">
+  </head>
+  <body></body>
+    <div class="d-flex">
+    <!--Side bar-->
+    <div class="side-bar sticky-top">
+      <div class="logo text-white ms-4 mt-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+        </svg>
+        <span class="fs-3 align-middle">Spotify</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="rights-icon bi bi-r-circle" viewBox="0 0 16 16">
+          <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5V4.002Zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417H6.835Z"/>
+        </svg>
+      </div>
+      <div class="text-white mx-3 mt-5">
+        <a href="index.html" class="btn  text-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
+          </svg>
+          <span class="fs-6">Home</span>
+        </a>
+      </div>
+      <div class="text-secondary mx-3 my-1">
+        <a href="#" class="btn link-active text-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+          <span class="fs-6">Search</span>
+        </a>
+      </div>
+      <div class="text-secondary mx-3 my-1">
+        <button type="button" class="btn text-secondary"
+        data-bs-toggle="popover" data-bs-placement="right"
+        data-bs-custom-class="custom-popover"
+        data-bs-title="Enjoy Your Library"
+        data-bs-content="Log in to see saved songs, podcasts, artists, and playlists in Your Library.">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+            <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+            <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+            <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+            <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          <span class="fs-6">Your Library</span>
+        </button>
+      </div>
+      <div class="my-5">
+        <div class="text-secondary mx-3">
+          <button type="button" class="btn text-secondary"
+          data-bs-toggle="popover" data-bs-placement="right"
+          data-bs-custom-class="custom-popover"
+          data-bs-title="Create a playlist"
+          data-bs-content="Log in to create and share playlists.">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+              <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+            </svg>
+            <span>Create Playlist</span>
+          </button>
+        </div>
+        <div class="text-secondary mx-3">
+          <button type="button" class="btn text-secondary"
+        data-bs-toggle="popover" data-bs-placement="right"
+        data-bs-custom-class="custom-popover"
+        data-bs-title="Enjoy your Liked Songs"
+        data-bs-content="Log in to see all the songs you've liked in one easy playlist.">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v13.5zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+          </svg>
+          <span>Liked Songs</span>
+        </button>
+        </div>
+      </div>
+      <div class="links text-secondary ms-3 my-4">
+        <a href="legal.html">Legal</a>
+        <a href="privacy.html">Privacy Center</a>
+        <a href="policy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies</a>
+        <br>
+        <a href="ads.html">About Ads</a>
+        <br>
+        <a href="cookies.html">Cookies</a>
+      </div>
+      <div class="language-btn mx-5">
+        <button class="btn btn-dark"><i class="bi bi-globe2"></i>&nbsp;English</button>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div>
+      <!-- Top Bar -->
+      <div class="top-bar text-white d-flex sticky-top justify-content-between">
+        <!-- Navigation Arrows -->
+        <div class="d-flex">
+          <div class="arrow p-2 m-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+          </div>
+          <div class="arrow p-2 m-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </div>
+          <div class="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search text-dark" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            <input type="text" class="search-bar" placeholder="What do you want to listen to?">
+          </div>
+        </div>
+        <!-- Sign up and Log in -->
+        <div class="d-flex me-4">
+          <a href="signup.html" class="signup px-5 py-3">Sign up</a>
+          <a href="login.html" class="login btn btn-light px-3 py-2 m-2">Log in</a>
+        </div>
+      </div>
+
+      <!-- Main Window -->
+      <div class="main-window">
+        
+        <!-- Horizontal bar 1 -->
+      <div class="bar"></div>
+        <div class="bar-heading d-flex justify-content-between">
+          <span class="head-font m-3"><a href="show.html">Browse all</a></span>
+        </div>
+        <div class="card-group">
+
+        <a href="#" class="btn text-start">
+          <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #FF7A00;">
+            <div class="card-body">
+              <h5 class="card-title text-white">Podcasts</h5>  
+            </div>
+            <img src="src/album/1_1.jpg" class="card-img-bottom rounded-0" alt="album">
+          </div> 
+        </a>
+
+        <a href="#" class="btn text-start">
+            <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #0051ff;">
+              <div class="card-body">
+                <h5 class="card-title text-white">Made For You</h5>  
+              </div>
+              <img src="src/album/1_2.jpg" class="card-img-bottom rounded-0" alt="album">
+            </div> 
+          </a>
+          
+          <a href="#" class="btn text-start">
+            <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #8800ff;">
+              <div class="card-body">
+                <h5 class="card-title text-white">Charts</h5>  
+              </div>
+              <img src="src/album/1_3.jpg" class="card-img-bottom rounded-0" alt="album">
+            </div> 
+          </a>
+
+          <a href="#" class="btn text-start">
+            <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a01717;">
+              <div class="card-body">
+                <h5 class="card-title text-white">New Releases</h5>  
+              </div>
+              <img src="src/album/1_4.jpg" class="card-img-bottom rounded-0" alt="album">
+            </div>  
+          </a>
+
+        </div>
+      
+      <!-- Horizontal bar 2 -->
+        <div class="card-group">
+
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #1762a0;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Discover</h5>  
+                  </div>
+                  <img src="src/album/2_1.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+          
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a01750;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Live Events</h5>  
+                  </div>
+                  <img src="src/album/2_2.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+            
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #17a075;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Bollywood</h5>  
+                  </div>
+                  <img src="src/album/2_3.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #55a017;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Punjabi</h5>  
+                  </div>
+                  <img src="src/album/2_4.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+
+        </div>
+      
+
+        <!-- Horizontal bar 3 -->
+        <div class="bar">
+         
+          <div class="card-group">
+  
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #178ea0;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Tamil</h5>  
+                  </div>
+                  <img src="src/album/inner1.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+            
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #6717a0;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Telugu</h5>  
+                  </div>
+                  <img src="src/album/inner2.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+  
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a08217;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Indie</h5>  
+                  </div>
+                  <img src="src/album/inner3.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+  
+            <a href="#" class="btn text-start">
+                <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a01767;">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Gaming</h5>  
+                  </div>
+                  <img src="src/album/inner4.jpg" class="card-img-bottom rounded-0" alt="album">
+                </div>  
+            </a>
+  
+          </div>
+        </div>
+
+          <!-- Horizontal bar 4 -->
+      <div class="bar"></div>
+      
+      <div class="card-group">
+
+      <a href="#" class="btn text-start">
+        <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #FF7A00;">
+          <div class="card-body">
+            <h5 class="card-title text-white">Podcasts</h5>  
+          </div>
+          <img src="src/album/1_1.jpg" class="card-img-bottom rounded-0" alt="album">
+        </div> 
+      </a>
+
+      <a href="#" class="btn text-start">
+          <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #0051ff;">
+            <div class="card-body">
+              <h5 class="card-title text-white">Made For You</h5>  
+            </div>
+            <img src="src/album/1_2.jpg" class="card-img-bottom rounded-0" alt="album">
+          </div> 
+        </a>
+        
+        <a href="#" class="btn text-start">
+          <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #8800ff;">
+            <div class="card-body">
+              <h5 class="card-title text-white">Charts</h5>  
+            </div>
+            <img src="src/album/1_3.jpg" class="card-img-bottom rounded-0" alt="album">
+          </div> 
+        </a>
+
+        <a href="#" class="btn text-start">
+          <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a01717;">
+            <div class="card-body">
+              <h5 class="card-title text-white">New Releases</h5>  
+            </div>
+            <img src="src/album/1_4.jpg" class="card-img-bottom rounded-0" alt="album">
+          </div>  
+        </a>
+
+      </div>
+    
+    <!-- Horizontal bar 5 -->
+      <div class="card-group">
+
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #1762a0;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Discover</h5>  
+                </div>
+                <img src="src/album/2_1.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+        
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a01750;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Live Events</h5>  
+                </div>
+                <img src="src/album/2_2.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+          
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #17a075;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Bollywood</h5>  
+                </div>
+                <img src="src/album/2_3.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #55a017;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Punjabi</h5>  
+                </div>
+                <img src="src/album/2_4.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+
+      </div>
+    
+
+      <!-- Horizontal bar 6 -->
+      <div class="bar">
+       
+        <div class="card-group">
+
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #178ea0;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Tamil</h5>  
+                </div>
+                <img src="src/album/inner1.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+          
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #6717a0;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Telugu</h5>  
+                </div>
+                <img src="src/album/inner2.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a08217;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Indie</h5>  
+                </div>
+                <img src="src/album/inner3.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+
+          <a href="#" class="btn text-start">
+              <div class="card rounded-2 m-2 overflow-hidden" style="background-color: #a01767;">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Gaming</h5>  
+                </div>
+                <img src="src/album/inner4.jpg" class="card-img-bottom rounded-0" alt="album">
+              </div>  
+          </a>
+
+        </div>
+      </div>
+    
+        <!-- Footer -->
+    <div class="d-flex my-5">
+      
+      <div class="d-flex mx-4">
+        <ul class="nav flex-column text-secondary">
+          <li class="nav-item text-white">
+            Company
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">For the Record</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mx-4">
+        <ul class="nav flex-column text-secondary">
+          <li class="nav-item text-white">
+            Communities
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">For Artists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Developers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Advertising</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Investors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vendors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Spotify for Work</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mx-4">
+        <ul class="nav flex-column text-secondary">
+          <li class="nav-item text-white">
+            Useful Links
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Free Mobile App</a>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex" style="margin-left: 8rem;">
+        <div class="rounded-circle icons mx-2"><a href="https://www.instagram.com/spotify/" target="_blank"><i class="bi bi-instagram"></i></a></div>
+        <div class="rounded-circle icons mx-2"><a href="https://twitter.com/spotify" target="_blank"><i class="bi bi-twitter"></i></a></div>
+        <div class="rounded-circle icons mx-2"><a href="https://www.facebook.com/SpotifyIndia/?brand_redir=6243987495" target="_blank"><i class="bi bi-facebook"></i></a></i></div>
+      </div>
+    </div>
+    <hr class="text-light">
+    <div class="pt-2 pb-5 my-5 ms-3">
+      <p class="text-secondary"><i class="bi bi-c-circle"></i>&nbsp;2023 Spotify AB</p>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+    <!-- Alert at bottom for sign up-->
+    <a href="signup.html"><div class="alert-custom fixed-bottom text-white">
+      <div class="float-start mx-3 my-3 lh-sm">
+        <p>PREVIEW OF SPOTIFY</p>
+      <p class="fs-6">Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+      </div>
+      <div class="float-end my-2 me-5">
+        <button class="btn btn-light btn-signup py-1"><b>Sign up free</b></button>
+      </div>
+    </div></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!-- Enable Popover-->
+    <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>  
+  </body>
+</html>

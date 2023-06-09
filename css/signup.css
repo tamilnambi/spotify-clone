@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@font-face {
+    font-family: title;
+    src: url(../Gotham-Spotify-Font/Gotham-Bold.otf);
+}
+:root{
+    --dgray: rgb(84, 83, 83);
+    --fb: #324e86;
+    --darkfb: #22407c;
+    --spotify: #1DB954;
+    --spotifyhover: #2de26d;
+}
+.logo{
+    font-family: title;
+    letter-spacing: -0.1rem;
+}
+.rights-icon{
+    margin-top: -0.3rem;
+    margin-left: -0.1rem;
+}
+h3{
+    font-family: Poppins;
+    letter-spacing: -0.1rem;
+    font-weight: 700;
+}
+h5{
+    font-weight: 700;
+}
+.btn{
+    font-family: Poppins;
+    font-weight: 400;
+    border-radius: 2rem;
+    width: 25rem;
+    height: 3.25rem;
+    letter-spacing: -0.05rem;
+}
+.btn:hover{
+    transform: scale(1.1); 
+}
+.fb-btn{
+    background-color: var(--fb);
+    color: white; 
+}
+.fb-btn:hover{
+    background-color: var(--darkfb) ;
+    color: white;
+}
+.g-btn{
+    border: 0.17rem solid var(--dgray);
+    color: var(--dgray);
+}
+.g-btn:hover{
+    border: 0.17rem solid var(--dgray);
+    color: var(--dgray);
+}
+.line{
+    width: 10rem;
+}
+.or{
+    color: gray;
+    letter-spacing: 0.5rem;
+    margin-top: 0.1rem;
+}
+.form-label{
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+.form-control{
+    width: 30rem;
+    border-color: gray;
+    height: 3rem;
+}
+.form-select{
+    width: 10rem;
+    border-color: gray;
+    height: 3rem;
+}
+.sub-label{
+    font-size: 0.85rem;
+}
+#day{
+    width: 5rem;
+}
+#year{
+    width: 8rem;
+}
+.gender-box,.form-text{
+    width: 30rem;
+}
+p{
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+#terms a,#login a{
+    color: var(--spotify);
+}
+#terms a:hover, #login a:hover{
+    color: var(--spotifyhover);
+}
+.btn-signup{
+    background-color: var(--spotify);
+    width: 10rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+}
+.btn-signup:hover{
+    background-color: var(--spotifyhover);
+    transform: scale(1.1);
+}
+.form-control:focus{
+    border: 0.1rem solid black;
+    box-shadow: none;
+}
+.form-check-input:focus{
+    box-shadow: none;
+}
+.form-check-input:checked{
+    background-color: var(--spotify);
+    border: none;
+}
