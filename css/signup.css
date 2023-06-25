@@ -4,6 +4,9 @@
     font-family: title;
     src: url(../Gotham-Spotify-Font/Gotham-Bold.otf);
 }
+#email-alert,#pwd-alert,#name-alert,#month-alert,#day-alert,#year-alert,#gender-alert{
+    display: none;
+}
 :root{
     --dgray: rgb(84, 83, 83);
     --fb: #324e86;

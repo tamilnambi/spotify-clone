@@ -162,6 +162,9 @@ background: linear-gradient(90deg, rgba(157,58,180,1) 0%, rgba(69,99,252,1) 100%
     left: 6.75rem;
     visibility: hidden;
 }
+.play-button svg{
+    margin-left: -0.25rem;
+}
 .card:hover .play-button{
     visibility: visible;
     animation-name: play;
